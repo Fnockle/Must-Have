@@ -1,0 +1,81 @@
+<?php
+  require("includes/header.php");
+?>
+
+    <main id="main__admin">
+      <h3><i class="fas fa-cogs"></i>Panneau d'administration</h3>
+      <section>
+        <h4>Ajouter une œuvre :</h4>
+        <form action="add_comics.php" method="post" enctype="multipart/form-data">
+          <fieldset>
+            <ul>
+              <li>
+                <label for="author">Auteur(s) :</label>
+                <input autofocus type="text" name="author" id="author" required>
+              </li>
+              <li>
+                <label for="category">Catégorie(s) :</label>
+                <select id="category" name="category[]" multiple required>
+                  <option selected disabled value></option>
+
+                  <?php
+
+                    foreach ($allCategories as $category) {
+
+                      echo '<option value="'.$category['id_cat'].'">' . $category['cat_name'] . '</option>';
+
+                    }
+
+                   ?>
+
+                </select>
+              </li>
+              <li>
+                <label for="type">Type d'oeuvre :</label>
+                <select id="type" name="type" required>
+                  <option selected disabled value></option>
+
+                  <?php
+
+                    foreach ($allType as $type) {
+
+                      echo '<option value="'.$type['id_type'].'">'.$type['comics_type'].'</option>';
+
+                    }
+
+                   ?>
+
+                </select>
+              </li>
+              <li>
+                  <label for="picture">Couverture :</label>
+                  <input type="hidden" name="MAX_FILE_SIZE" value="1000000">
+                  <input id="picture" name="picture" type="file" value="<?= $_POST['picture'] ?? '' ?>" required>
+              </li>
+              <li>
+                <label for="title">Titre :</label>
+                <input type="text" name="title" id="title" required>
+              </li>
+              <li>
+                <label for="contents">Description :</label>
+                <textarea name="contents" id="contents" rows="8" cols="50" required></textarea>
+              </li>
+              <li>
+                <label for="alternative">"Si vous avez aimé cette oeuvre, vous aimerez sûrement :"</label>
+                <input type="text" name="alternative" id="alternative" required>
+              </li>
+            </ul>
+          </fieldset>
+          <ul>
+            <li>
+                <input type="submit" value="Enregistrer">
+                <a href="index.php">Annuler</a>
+            </li>
+          </ul>
+        </form>
+      </section>
+    </main>
+
+<?php
+  require("includes/footer.php");
+?>

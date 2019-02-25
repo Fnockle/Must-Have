@@ -1,0 +1,36 @@
+<?php
+  require("includes/header.php");
+?>
+
+    <main id="main__add-user">
+        <h2><i class="fa fa-user"></i> Création d'un compte client</h2>
+        <form action="add_user.php" method="POST">
+            <fieldset>
+                <legend><i class="fa fa-book"></i> Informations d'inscription</legend>
+                <ul>
+                    <li>
+                        <label for="pseudo">Pseudo :</label>
+                        <input autofocus id="pseudo" type="text" placeholder="Jean" name="pseudo" data-required data-name="pseudo" value="<?= $_POST['pseudo'] ?? '' ?>" required>
+                    </li>
+                    <li>
+                        <label for="email">E-mail :</label>
+                        <input id="email" type="email" placeholder="exemple@exemple.com" name="email" data-required data-name="E-mail" value="<?= $_POST['email'] ?? '' ?>" required>
+                    </li>
+                    <li>
+                        <label for="password">Mot de passe :</label>
+                        <input id="password" type="password" name="password" data-required data-name="Mot de passe" required>
+                    </li>
+                </ul>
+            </fieldset>
+            <ul>
+                <li>
+                    <input type="submit" value="Créer le compte">
+                    <a href="index.php">Annuler</a>
+                </li>
+            </ul>
+        </form>
+    </main>
+
+<?php
+  require("includes/footer.php");
+?>

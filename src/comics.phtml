@@ -1,0 +1,48 @@
+<?php
+  require("includes/header.php");
+?>
+
+    <main id="main__comics">
+      <div id="comics__filter">
+        <p>Filtrer par genre</p>
+        <select id="categoryFilter" name="categoryFilter" onchange="fetchComics(this.value)">
+          <option selected disabled value></option>
+          <?php
+
+            foreach ($selectFilter as $filter) {
+
+              echo '<option value="'.$filter['id_cat'].'">'.$filter['cat_name'].'</option>';
+
+            }
+
+           ?>
+
+        </select>
+        <p id="counter">Il y a <?=$count['count']?> comics dans le Must-Have actuellement</p>
+      </div>
+
+      <div id="comics__list">
+        <?php
+          foreach ($comics as $comic) {
+        ?>
+            <div class="individualComics">
+              <article>
+                <h3><?=htmlspecialchars($comic['comics_name'])?></h3>
+                <img src="img/comics/<?=htmlspecialchars($comic['picture'])?>" alt="<?=htmlspecialchars($comic['comics_name'])?>" height="181" width="125">
+                <p><?=htmlspecialchars($comic['categorie'])?></p>
+              </article>
+              <article class="hidden">
+                <h3><?=htmlspecialchars($comic['author_name'])?></h3>
+                <p><?=htmlspecialchars($comic['comics_description'])?></p>
+                <p>Vous pourriez aimer : <?=htmlspecialchars($comic['comics_alternative'])?></p>
+              </article>
+            </div>
+        <?php
+          }
+         ?>
+      </div>
+    </main>
+
+<?php
+  require("includes/footer.php");
+?>

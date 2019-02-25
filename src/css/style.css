@@ -1,0 +1,378 @@
+/* FONT */
+@font-face {
+  font-family: amaranth;
+  src: url(../fonts/Amaranth-Regular.ttf);
+}
+
+
+/* GLOBAL */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  color: #888;
+}
+
+body {
+  margin: 0;
+}
+
+#main__index, #main__manga, header, footer {
+  background-color: #333;
+}
+
+#main__login {
+  background-color: cyan;
+}
+
+#main__bd {
+  background-color: #eee;
+  color: #888;
+}
+
+#main__comics {
+  background-color: #5bbfd8;
+  color: black;
+}
+
+h1, h2 {
+  text-align: center;
+  font-variant: small-caps;
+}
+
+h1 {
+  text-shadow: 2px 2px 5px #000;
+  margin: 0;
+}
+
+h3 {
+  color: white;
+  text-shadow: 0px 2px 5px rgba(0,0,0,0.3);
+  font-family: amaranth;
+}
+
+#bds__list h3 {
+  color: #4f5d73;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: #0B61A4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.clearfix {
+  clear: both;
+}
+
+
+/* MOBIL */
+header {
+  padding-bottom: 10px;
+  border-bottom: 2px solid #0d5156;
+}
+
+header nav ul{
+  padding: 20px 0 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+header nav ul li {
+  text-align: center;
+  padding: 10px 0 10px 0;
+}
+
+header nav ul li a {
+  font-size: 1.5rem;
+}
+
+header nav p {
+  text-align: center;
+}
+
+main {
+  padding: 10px;
+}
+
+.gallyImg {
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+#bds__list, #bds__filter, #comics__list, #comics__filter, #mangas__list, #mangas__filter {
+  text-align: center;
+}
+
+.individualBD img, .individualComics img, .individualManga img {
+  -webkit-box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+          box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+  -webkit-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+.individualBD:hover img, .individualComics:hover img, .individualManga:hover img {
+  opacity: 0.7;
+  -webkit-transform: scale(1.05, 1.05);
+      -ms-transform: scale(1.05, 1.05);
+          transform: scale(1.05, 1.05);
+}
+
+#main__login, #main__add-user, #main__admin {
+  background: url(../img/paper.png) repeat;
+  height: 100vh;
+}
+
+#main__admin h3 {
+  color: #888;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-top: 2px solid #0d5156;
+}
+
+
+/* TABLET */
+@media screen and (min-width: 768px){
+
+  #main__index #div__slider {
+    display: block;
+  }
+
+  #main__index p {
+    text-align: center;
+  }
+
+  .gallyImg {
+    width: 50%;
+    margin: 0 25% 0 25%;
+  }
+
+  .hidden {
+    display: inherit;
+  }
+
+  #main__bd, #main__comics, #main__manga {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    max-width: 100%;
+  }
+
+  #bds__list, #comics__list, #mangas__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+
+  .individualBD, .individualComics, .individualManga {
+    width: 40%;
+    margin: 5px;
+    padding: 10px;
+    border: 2px solid;
+  }
+
+}
+
+
+/* DESKTOP */
+@media screen and (min-width: 1024px){
+
+  header p {
+    font-size: 2.5rem;
+  }
+
+  main h3 {
+    font-size: 2rem;
+  }
+
+  main h4 {
+    font-size: 1.8rem;
+  }
+
+  main p {
+    font-size: 1.5rem;
+  }
+
+  main label {
+    font-size: 1.5rem;
+  }
+
+  footer p {
+    font-size: 2.5rem;
+  }
+
+  header nav ul {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+
+  header nav ul li a {
+    font-size: 3rem;
+  }
+
+  #slider #slider-next {
+    left: 98%;
+  }
+
+  #slider #slider-previous {
+    right: 98%;
+  }
+
+  #main__index article {
+    width: 70%;
+  }
+
+  .gallyImg {
+    width: 10%;
+    float: left;
+    margin-right: 20px;
+  }
+
+  #main__index article p {
+    line-height: 65px;
+    text-align: left;
+  }
+
+  #main__bd, #main__comics, #main__manga {
+    padding: 70px 200px 70px 200px;
+  }
+
+  #bds__list, #comics__list, #mangas__list {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  #bds__list .individualBD, #comics__list .individualComics, #mangas__list .individualManga {
+   width: 30%;
+  }
+
+  #main__add-user form, #main__login form, #main__admin form {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  #main__admin h3, #main__admin h4 {
+    text-align: center;
+  }
+
+  main label {
+    width: 250px;
+  }
+
+  input[type=submit] {
+    width: 150px;
+    padding: 5px;
+    font-size: 1.5rem;
+  }
+
+  form a {
+    font-size: 1.5rem;
+  }
+}
+
+
+/* FORM */
+fieldset input:valid, fieldset textarea:valid, fieldset select:valid {
+  -webkit-box-shadow: 0 0 2px 1px green;
+          box-shadow: 0 0 2px 1px green;
+}
+
+label {
+  width: 90px;
+  display: inline-block;
+  vertical-align: top;
+  margin: 6px;
+}
+
+textarea {
+  resize: none;
+  margin-bottom: 8px;
+}
+
+select {
+  margin-bottom: 8px;
+}
+
+
+/* SLIDER */
+#div__slider {
+  display: none;
+}
+
+#slider {
+  margin: 0;
+  position: relative;
+}
+
+#slide {
+  width: 100%;
+  height: 300px;;
+}
+
+#slider-next {
+  color: rgba(255, 255, 255, 0.5);
+  border: 0px solid;
+  border-radius: 100px;
+  background-color: rgba(128, 128, 128, 0.3);
+  position: absolute;
+  top: 48%;
+  left: 96%;
+}
+
+#slider-previous {
+  color: rgba(255, 255, 255, 0.5);
+  border: 0px solid;
+  border-radius: 100px;
+  background-color: rgba(128, 128, 128, 0.3);
+  position: absolute;
+  top: 48%;
+  right: 96%;
+}

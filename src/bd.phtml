@@ -1,0 +1,48 @@
+<?php
+  require("includes/header.php");
+?>
+
+    <main id="main__bd">
+      <div id="bds__filter">
+        <p>Filtrer par genre</p>
+        <select id="categoryFilter" name="categoryFilter" onchange="fetchBds(this.value)">
+          <option selected disabled value></option>
+          <?php
+
+            foreach ($selectFilter as $filter) {
+
+              echo '<option value="'.$filter['id_cat'].'">'.$filter['cat_name'].'</option>';
+
+            }
+
+           ?>
+
+        </select>
+        <p id="counter">Il y a <?=$count['count']?> BDs dans le Must-Have actuellement</p>
+      </div>
+
+      <div id="bds__list">
+        <?php
+          foreach ($bds as $bd) {
+        ?>
+            <div class="individualBD">
+              <article>
+                <h3><?=htmlspecialchars($bd['comics_name'])?></h3>
+                <img src="img/comics/<?=htmlspecialchars($bd['picture'])?>" alt="<?=htmlspecialchars($bd['comics_name'])?>" height="181" width="125">
+                <p><?=htmlspecialchars($bd['categorie'])?></p>
+              </article>
+              <article class="hidden">
+                <h3><?=htmlspecialchars($bd['author_name'])?></h3>
+                <p><?=htmlspecialchars($bd['comics_description'])?></p>
+                <p>Vous pourriez aimer : <?=htmlspecialchars($bd['comics_alternative'])?></p>
+              </article>
+            </div>
+        <?php
+          }
+         ?>
+      </div>
+    </main>
+
+<?php
+  require("includes/footer.php");
+?>

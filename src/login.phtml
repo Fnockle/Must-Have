@@ -1,0 +1,32 @@
+<?php
+  require("includes/header.php");
+?>
+
+    <main id="main__login">
+      <h2><i class="fa fa-lock"></i> Se connecter avec un compte utilisateur</h2>
+      <form action="login.php" method="POST">
+          <fieldset>
+              <legend>Informations d'authentification</legend>
+              <ul>
+                  <li>
+                      <label for="email">E-mail :</label>
+                      <input autofocus id="email" type="email" placeholder="exemple@exemple.com" name="email" data-required data-name="E-mail" value="<?= $_POST['email'] ?? '' ?>" required>
+                  </li>
+                  <li>
+                      <label for="password">Mot de passe :</label>
+                      <input id="password" type="password" name="password" data-required data-name="Mot de passe" required>
+                  </li>
+              </ul>
+          </fieldset>
+          <ul>
+              <li>
+                  <input type="submit" value="Connexion">
+                  <a href="index.php">Annuler</a>
+              </li>
+          </ul>
+      </form>
+    </main>
+
+<?php
+  require("includes/footer.php");
+?>
