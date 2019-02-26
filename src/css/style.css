@@ -312,7 +312,13 @@ footer {
     padding: 5px;
     font-size: 1.5rem;
   }
-
+  
+  div .select__default {
+    width: 75px;
+    padding: 0;
+    font-size: 1.4rem;
+  }
+  
   form a {
     font-size: 1.5rem;
   }
