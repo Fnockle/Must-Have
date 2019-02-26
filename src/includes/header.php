@@ -8,7 +8,7 @@ scale=1.0">
     <link rel="stylesheet" href="css/fontawesome-all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <title>Les Must-Have de JVC</title>
+    <title><?php echo $title ; ?></title>
   </head>
   <body>
     <header>
